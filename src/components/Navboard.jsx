@@ -10,7 +10,7 @@ export const Navboard = ({category}) => {
     
       fetch(url)
       .then(res=>res.json()).
-      then(data => {setArticle(data.articles); console.log(data)});
+      then(data => {setArticle(data.articles);});
     
     },[category]);
 
@@ -20,14 +20,14 @@ export const Navboard = ({category}) => {
       <h2 className="text-center my-4">Latest <span className="badge bg-danger text-light">NEWS</span></h2>
     <div className="item-box row">
       
-          {articles.map((data,index)=>{
+      {articles.length > 1 ?   articles.map((data,index)=>{
          return  <div className="col-lg-3"  key={index}><NavItem 
          title={data.title} 
          description={data.description}
          img = {data.urlToImage}
          url={data.url}
          /></div>
-        })}
+        }) : 'No Api Data'}
       
     </div>
   </div>
