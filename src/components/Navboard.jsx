@@ -20,7 +20,7 @@ export const Navboard = ({category}) => {
       <h2 className="text-center my-4">Latest <span className="badge bg-danger text-light">NEWS</span></h2>
     <div className="item-box row">
       
-      {articles.length > 1 ?   articles.map((data,index)=>{
+      {articles.length > 0 ?   articles.map((data,index)=>{
          return  <div className="col-lg-3"  key={index}><NavItem 
          title={data.title} 
          description={data.description}
