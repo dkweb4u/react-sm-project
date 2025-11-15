@@ -10,7 +10,7 @@ export const Navboard = ({category}) => {
     
       fetch(url)
       .then(res=>res.json()).
-      then(data => {setArticle(data.articles);});
+      then(data => {setArticle(data.articles);console.log(data)});
     
     },[category]);
 
